@@ -1,4 +1,5 @@
 function main()
+  pkg load image
   img = imread("inputEx5.jpg");
   image = mat2gray(img);
   imgSize = size(image);

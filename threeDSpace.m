@@ -12,6 +12,6 @@ function dimensionVectors = threeDSpace(model, trainVect)
           logProbality = log(model.weight(i))-0.5*(log(det(cov))+(ctranspose(ctranspose(trainVect(j,:))-ctranspose(model.mean(i,:))))*inv(cov)*(ctranspose(trainVect(j,:))-(ctranspose(model.mean(i,:)))));
           clusters = [clusters,logProbality];
       end
-      dimensionVectors = [LnVectorProb;clusters];
+      dimensionVectors = [dimensionVectors;clusters];
   end
 end

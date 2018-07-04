@@ -3,13 +3,13 @@ function model = gaussianMixtureModel(trainVect,componentNumb)
   model.mean=[0,0,0];
   model.covar(1,:,:)=[1 0 0; 0 1 0; 0 0 1];
   stp = 10^-6;
-  for i=1:
+  for i=1:componentNumb
     lastPx=-inf;
     TotalProbabLine = caculatetotalProbability(model, trainVect);
 
     while(TotalProbabLine-lastPx>stp)
       componentProbalityLine = kMeanClustering(model, trainVect);
-      model = mplementKmean(model, trainVect, componentProbalityLine);
+      model = implementKmean(model, trainVect, componentProbalityLine);
       TotalProbabLine = caculatetotalProbability(model, trainVect);
     end
     clf

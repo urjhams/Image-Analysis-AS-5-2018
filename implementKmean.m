@@ -10,7 +10,7 @@ function model = implementKmean(model, trainVect, componentProbalityLine)
     j = 1;
     %loop of feature vectors
     while(j <= featureVectNum)
-      centroid = trainVect(j,:) * exp(featureVectNum(i,j));
+      centroid = trainVect(j,:) * exp(componentProbalityLine(i,j));
       actualCluster = actualCluster + centroid;
       j = j + 1;
     end
